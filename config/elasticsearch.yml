@@ -1,5 +1,8 @@
 path:
   data: /data/data
   logs: /data/log
-  plugins: /data/plugins
+  plugins: /elasticsearch/plugins
   work: /data/work
+
+metrics.graphite.host: 192.168.10.105
+metrics.graphite.port: 8111

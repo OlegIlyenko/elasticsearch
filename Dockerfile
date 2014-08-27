@@ -20,6 +20,9 @@ VOLUME ["/data"]
 
 # Mount elasticsearch.yml config
 ADD config/elasticsearch.yml /elasticsearch/config/elasticsearch.yml
+ADD plugins/elasticsearch-plugin-graphite-0.2-SNAPSHOT.zip /elasticsearch-plugin-graphite-0.2-SNAPSHOT.zip
+
+RUN /elasticsearch/bin/plugin -install graphite -url file:///elasticsearch-plugin-graphite-0.2-SNAPSHOT.zip
 
 # Define working directory.
 WORKDIR /data
